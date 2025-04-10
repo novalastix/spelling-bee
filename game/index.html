@@ -26,34 +26,67 @@
             background-size: contain;
             background-repeat: no-repeat;
 
-            --w: 22vw;
-            --m: 1vw;
+            --w: 18vw;
+            --m: 0vw;
+
+            --cell: 18vw;
+
             width: var(--w);
             height: var(--w);
 
             color: #42b891;
             text-align: center;
             overflow: hidden;
-            font-size: 32px;
-            line-height: 22vw; 
+            font-size: 1.5vw;
+            line-height: var(--w); 
 
             position: absolute;
             bottom: 0;
             right: 0;
         }
 
-        #c0 { top: var(--m);                            left: var(--m); }
-        #c1 { top: var(--m);                            left: calc(var(--m) + (1.6*var(--w)));}
-        #c2 { top: var(--m);                            left: calc(var(--m) + (3.2*var(--w)));}
-        #c3 { top: calc(var(--m) + (0.5 * var(--w)));   left: calc(var(--m) + (0.8*var(--w)));}
-        #c4 { top: calc(var(--m) + (0.5 * var(--w)));   left: calc(var(--m) + (2.4*var(--w)));}
+        /* #c0 { top: var(--m);                            left: var(--m); }
+        #c1 { top: var(--m);                            left: calc(var(--m) + (1.55*var(--w)));}
+        #c2 { top: var(--m);                            left: calc(var(--m) + (3.1*var(--w)));}
+
+        #c3 { top: calc(var(--m) + (0.45 * var(--w)));   left: calc(var(--m) + (0.77*var(--w)));}
+        #c4 { top: calc(var(--m) + (0.45 * var(--w)));   left: calc(var(--m) + (2.33*var(--w)));}
+
+        #c5 { top: calc(var(--m) + (0.9 * var(--w)));   left: var(--m); }
+        #c6 { top: calc(var(--m) + (0.9 * var(--w)));   left: calc(var(--m) + (1.55*var(--w)));}
+        #c7 { top: calc(var(--m) + (0.9 * var(--w)));   left: calc(var(--m) + (3.1*var(--w)));}
+
+        #c8 { top: calc(var(--m) + (1.35 * var(--w)));   left: calc(var(--m) + (0.77*var(--w)));}
+        #c9 { top: calc(var(--m) + (1.35 * var(--w)));   left: calc(var(--m) + (2.33*var(--w)));}
+
+        #c10 { top: calc(var(--m) + (1.8 * var(--w)));   left: var(--m); }
+        #c11 { top: calc(var(--m) + (1.8 * var(--w)));   left: calc(var(--m) + (1.55*var(--w)));}
+        #c12 { top: calc(var(--m) + (1.8 * var(--w)));   left: calc(var(--m) + (3.1*var(--w)));} */
+
+        #c0 { top: calc(50vh - (var(--cell) * 1.4));                left: calc(50vw - (var(--cell) * 2.07)); }
+        #c1 { top: calc(50vh - (var(--cell) * 1.4));                left: calc(50vw - (var(--cell) * 0.5)); }
+        #c2 { top: calc(50vh - (var(--cell) * 1.4));                left: calc(50vw - (var(--cell) * -1.05)); }
+
+        #c3 { top: calc(50vh - (var(--cell) * 1.6 * sin(36deg)));   left: calc(50vw - (var(--cell) * 1.6 * cos(36deg))); }
+        #c4 { top: calc(50vh - (var(--cell) * 1.6 * sin(36deg)));   left: calc(50vw - (var(--cell) * -0.35 * cos(36deg))); }
+
+        #c5 { top: calc(50vh - (var(--cell) * 0.5));                left: calc(50vw - (var(--cell) * 2.07)); }
+        #c6 { top: calc(50vh - (var(--cell) * 0.5));                left: calc(50vw - (var(--cell) * 0.5)); }
+        #c7 { top: calc(50vh - (var(--cell) * 0.5));                left: calc(50vw - (var(--cell) * -1.05)); }
+
+        #c8 { top: calc(50vh - (var(--cell) * 0.08 * sin(36deg)));   left: calc(50vw - (var(--cell) * 1.6 * cos(36deg))); }
+        #c9 { top: calc(50vh - (var(--cell) * 0.08 * sin(36deg)));   left: calc(50vw - (var(--cell) * -0.35 * cos(36deg))); }
+
+        #c10 { top: calc(50vh - (var(--cell) * -0.4));              left: calc(50vw - (var(--cell) * 2.07)); }
+        #c11 { top: calc(50vh - (var(--cell) * -0.4));              left: calc(50vw - (var(--cell) * 0.5)); }
+        #c12 { top: calc(50vh - (var(--cell) * -0.4));              left: calc(50vw - (var(--cell) * -1.05)); }
         
     </style>
     </head>
 <body>
     <main>
         <div class="hive">
-            <div class="cell" id="c0">012345678901234</div>
+            <div class="cell" id="c0">MMMMMMWW</div>
             <div class="cell" id="c1"></div>
             <div class="cell" id="c2"></div>
             <div class="cell" id="c3"></div>
