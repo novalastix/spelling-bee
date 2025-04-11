@@ -38,11 +38,12 @@
             text-align: center;
             overflow: hidden;
             font-size: 1.5vw;
-            line-height: var(--w); 
 
             position: absolute;
             bottom: 0;
             right: 0;
+
+            display: none;
         }
 
         /* #c0 { top: var(--m);                            left: var(--m); }
@@ -80,26 +81,52 @@
         #c10 { top: calc(50vh - (var(--cell) * -0.4));              left: calc(50vw - (var(--cell) * 2.07)); }
         #c11 { top: calc(50vh - (var(--cell) * -0.4));              left: calc(50vw - (var(--cell) * 0.5)); }
         #c12 { top: calc(50vh - (var(--cell) * -0.4));              left: calc(50vw - (var(--cell) * -1.05)); }
+
+        .hex
+        {
+            width: 70%;
+            height: 70%;
+            margin: 15%;
+            align-content: center;
+        }
+
+        .dead
+        {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .sound
+        {
+            position: absolute;
+        }
+        #good
+        {
+            top: 30vh;
+            right: 0;
+        }
         
     </style>
     </head>
 <body>
     <main>
         <div class="hive">
-            <div class="cell" id="c0">MMMMMMWW</div>
-            <div class="cell" id="c1"></div>
-            <div class="cell" id="c2"></div>
-            <div class="cell" id="c3"></div>
-            <div class="cell" id="c4"></div>
-            <div class="cell" id="c5"></div>
-            <div class="cell" id="c6"></div>
-            <div class="cell" id="c7"></div>
-            <div class="cell" id="c8"></div>
-            <div class="cell" id="c9"></div>
-            <div class="cell" id="c10"></div>
-            <div class="cell" id="c11"></div>
-            <div class="cell" id="c12"></div>
+            <div class="cell" id="c0"><div class="hex">0</div></div>
+            <div class="cell" id="c1"><div class="hex">1</div></div>
+            <div class="cell" id="c2"><div class="hex">2</div></div>
+            <div class="cell" id="c3"><div class="hex">3</div></div>
+            <div class="cell" id="c4"><div class="hex">4</div></div>
+            <div class="cell" id="c5"><div class="hex">5</div></div>
+            <div class="cell" id="c6"><div class="hex">6</div></div>
+            <div class="cell" id="c7"><div class="hex">7</div></div>
+            <div class="cell" id="c8"><div class="hex">8</div></div>
+            <div class="cell" id="c9"><div class="hex">9</div></div>
+            <div class="cell" id="c10"><div class="hex">10</div></div>
+            <div class="cell" id="c11"><div class="hex">11</div></div>
+            <div class="cell" id="c12"><div class="hex">12</div></div>
         </div>
+
+        <div class="sound" id="good">test</div>
     </main>
 </body>
 <script src="./game.js"></script> 
