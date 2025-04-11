@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         main
         {
@@ -22,7 +22,7 @@
         }
         .cell
         {
-            background-image: url(/resources/cell.png);
+            background-image: url(../resources/cell.png);
             background-size: contain;
             background-repeat: no-repeat;
 
@@ -162,19 +162,19 @@
             <div class="cell" id="c12"><div class="hex">12</div></div>
         </div>
 
-        <div class="sound" id="good"><img src="/resources/correct.png" /></div>
-        <div class="sound" id="bad"><img src="/resources/incorrect.png" /></div>
+        <div class="sound" id="good"><img src="../resources/correct.png" /></div>
+        <div class="sound" id="bad"><img src="../resources/incorrect.png" /></div>
 
-        <audio id="audioGood" src="/resources/temp_good.mp3"></audio>
-        <audio id="audioBad" src="/resources/temp_bad.mp3"></audio>
+        <audio id="audioGood" src="../resources/temp_good.mp3"></audio>
+        <audio id="audioBad" src="../resources/temp_bad.mp3"></audio>
 
-        <form action="/victory" method="GET">
+        <form action="../victory" method="GET">
             <input type="submit" id="endGameBTN" value="Game Over">
             <input type="hidden" id="winner" name="winner" value="">
         </form>
     </main>
 </body>
-<script src="./game.js"></script> 
+<script src="../game.js"></script> 
 </html>
 
 <!-- main
