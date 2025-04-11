@@ -50,7 +50,8 @@ function loadGame()
   players = getPlayersArray();
   console.log(players)
   currentPlayers = players.length;
-  fillTiles(players)
+  fillTiles(players);
+  setupAudio();
 }
 
 function getJsonFromUrl(url) {
@@ -77,10 +78,6 @@ function getPlayersArray(){
   return players;
 }
 
-function checkScore(){
-
-}
-
 function fillTiles(players)
 {
   let board = boards[players.length - 1];
@@ -89,14 +86,37 @@ function fillTiles(players)
     let hexId = board[i];
     let hex = document.getElementById(hexId);
     hex.style.display = "block";
+    hex.classList.add("alive");
     hex.childNodes[0].textContent = players[i];
 
     hex.childNodes[0].addEventListener("click",function(){
-      hex.classList.add("dead");
-      currentPlayers--;
-      checkScore();
-    })
+      if(currentPlayers > 1)
+      {
+        currentPlayers--;
+        hex.classList.remove("alive");
+      }
+
+      if(currentPlayers <= 1)
+      {
+        document.getElementById("endGameBTN").style.display="block";
+        document.getElementById("winner").value = document.getElementsByClassName("alive")[0].childNodes[0].textContent;
+      }
+    });
   }
+}
+
+function setupAudio()
+{
+  document.getElementById("good").addEventListener("click",function()
+  { 
+    var audio = document.getElementById("audioGood");
+    audio.play();
+  });
+  document.getElementById("bad").addEventListener("click",function()
+  { 
+    var audio = document.getElementById("audioBad");
+    audio.play();
+  });
 }
 
 loadGame();

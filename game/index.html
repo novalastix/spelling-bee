@@ -43,6 +43,8 @@
             bottom: 0;
             right: 0;
 
+            opacity: 0;
+            transition: opacity 0.3s;
             display: none;
         }
 
@@ -90,20 +92,54 @@
             align-content: center;
         }
 
-        .dead
+        .alive
         {
-            opacity: 0;
-            transition: opacity 0.3s;
+            opacity: 100%;
         }
 
         .sound
         {
             position: absolute;
+            background-color: #a64b40;
+            padding: 4vh 2vw;
+            width: 8vw;
+            height: 10vh;
+            right: 0;
+            border-radius: 100% 0 0 100%;
         }
+        .sound img { height: 100%;}
         #good
         {
-            top: 30vh;
-            right: 0;
+            top: 29vh;
+        }
+        #bad
+        {
+            top: 53vh;
+        }
+
+        input
+        {
+            border-radius: 15px;
+            font-family: "Lilita One", sans-serif;
+            position: absolute;
+            bottom: 5vh;
+            left: 42vw;
+            font-size: 32px;
+            width: 16vw;
+            padding: 0.25em 0.5em;
+            background-color: #FEC565;
+            color: #CC5142;
+            border: 2px solid #FEC565;
+            display: none;
+        }
+        input:hover
+        {
+            background-color: #FF8E3B;
+            color: #CC5142;
+            border: 2px solid #FF8E3B;
+        }
+        input:focus{
+            outline: none;
         }
         
     </style>
@@ -126,7 +162,16 @@
             <div class="cell" id="c12"><div class="hex">12</div></div>
         </div>
 
-        <div class="sound" id="good">test</div>
+        <div class="sound" id="good"><img src="/resources/correct.png" /></div>
+        <div class="sound" id="bad"><img src="/resources/incorrect.png" /></div>
+
+        <audio id="audioGood" src="/resources/temp_good.mp3"></audio>
+        <audio id="audioBad" src="/resources/temp_bad.mp3"></audio>
+
+        <form action="/victory" method="GET">
+            <input type="submit" id="endGameBTN" value="Game Over">
+            <input type="hidden" id="winner" name="winner" value="">
+        </form>
     </main>
 </body>
 <script src="./game.js"></script> 
