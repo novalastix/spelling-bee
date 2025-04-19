@@ -43,6 +43,8 @@ const boards=
   ]
 ];
 
+const deathAudio = document.getElementById("squish");
+
 let currentPlayers = 0;
 
 function loadGame()
@@ -94,6 +96,8 @@ function fillTiles(players)
       {
         currentPlayers--;
         hex.classList.remove("alive");
+        deathAudio.currentTime = 0
+        deathAudio.play();
       }
 
       if(currentPlayers <= 1)
@@ -107,15 +111,36 @@ function fillTiles(players)
 
 function setupAudio()
 {
+  const goodDefault = "<img src=\"../resources/correct.png\" />"
+  const goodPressed = "<img src=\"../resources/correct_pressed.png\" />"
+  const badDefault = "<img src=\"../resources/incorrect.png\" />"
+  const badPressed = "<img src=\"../resources/incorrect_pressed.png\" />"
+  const delay = 500;
+
+  document.getElementById("good").innerHTML = goodDefault;
+  document.getElementById("bad").innerHTML = badDefault;
+
   document.getElementById("good").addEventListener("click",function()
   { 
     var audio = document.getElementById("audioGood");
+    audio.currentTime = 0
     audio.play();
+
+    document.getElementById("good").innerHTML = goodPressed;
+    setTimeout(function(){
+      document.getElementById("good").innerHTML = goodDefault;
+    },delay);
   });
   document.getElementById("bad").addEventListener("click",function()
   { 
     var audio = document.getElementById("audioBad");
+    audio.currentTime = 0
     audio.play();
+    
+    document.getElementById("bad").innerHTML = badPressed;
+    setTimeout(function(){
+      document.getElementById("bad").innerHTML = badDefault;
+    },delay);
   });
 }
 
