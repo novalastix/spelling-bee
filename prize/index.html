@@ -75,13 +75,20 @@
         <div class="rewardBox" id="rewardBox1">?</div>
         <div class="rewardBox" id="rewardBox2">?</div>
     </main>
+    <audio id="squish" src="../resources/squelch.mp3"></audio>
 </body>
 <script>
+     const audio = document.getElementById("squish");
+    
     document.getElementById("rewardBox1").addEventListener("click",function(){
         this.classList.add("hidden");
+        audio.currentTime = 0
+        audio.play();
     });
     document.getElementById("rewardBox2").addEventListener("click",function(){
         this.classList.add("hidden");
+        audio.currentTime = 0
+        audio.play();
     });
 </script>
 </html>
