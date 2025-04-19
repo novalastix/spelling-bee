@@ -92,6 +92,7 @@ function fillTiles(players)
     hex.childNodes[0].textContent = players[i];
 
     hex.childNodes[0].addEventListener("click",function(){
+      
       if(currentPlayers > 1)
       {
         currentPlayers--;
@@ -105,7 +106,7 @@ function fillTiles(players)
         document.getElementById("endGameBTN").style.display="block";
         document.getElementById("winner").value = document.getElementsByClassName("alive")[0].childNodes[0].textContent;
       }
-    });
+    }, { once: true });
   }
 }
 
