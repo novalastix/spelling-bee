@@ -85,7 +85,7 @@
     </head>
 <body>
     <main>
-        <form action="../game" method="GET">
+        <form id="pageForm" action="../game" method="GET">
             <h2>SETUP</h2>
             <input type="text" id="player1" name="player1" placeholder="Player One" maxlength="12">
             <input type="text" id="player2" name="player2" placeholder="Player Two" maxlength="12">
@@ -104,4 +104,20 @@
         </form>
     </main>
 </body>
+    <script>
+    document.getElementById('pageForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const form = this;
+        const params = new URLSearchParams();
+
+        for (let input of form.querySelectorAll('input[type="text"]')) {
+            if (input.value.trim()) {
+                params.append(input.name, input.value);
+            }
+        }
+
+        window.location.href = form.action + '?' + params.toString().replace(/\+/g, '%20');
+    });
+    </script> 
 </html>

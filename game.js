@@ -145,5 +145,20 @@ function setupAudio()
   });
 }
 
+document.getElementById('victoryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const form = this;
+  const params = new URLSearchParams();
+
+  for (let input of form.querySelectorAll('input[type="hidden"]')) {
+    if (input.value.trim()) {
+      params.append(input.name, input.value);
+    }
+  }
+
+  window.location.href = form.action + '?' + params.toString().replace(/\+/g, '%20');
+});
+
 loadGame();
 
